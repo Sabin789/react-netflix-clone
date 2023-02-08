@@ -1,6 +1,7 @@
 
 import { Component } from "react";
 import { Carousel, Spinner,Alert} from 'react-bootstrap';
+import{Link} from "react-router-dom"
 class Movie extends Component{
   
     state={
@@ -66,7 +67,7 @@ componentDidMount(){
           return(
      
         
-            <img variant="top" src={oneMovie.Poster} key={oneMovie.imdbID} style={{height:"180px",width:"230px" ,marginLeft:"0.2em"}} alt=""/>
+            <Link key={oneMovie.imdbID} to={"/movie-details/"+oneMovie.imdbID}> <img variant="top" src={oneMovie.Poster}  style={{height:"180px",width:"230px" ,marginLeft:"0.2em"}} alt=""/></Link> 
         
        
            
@@ -80,7 +81,7 @@ componentDidMount(){
           
           return(
             
-            <img variant="top" src={oneMovie.Poster} key={oneMovie.imdbID}  style={{height:"180px",width:"230px" ,marginLeft:"0.2em"}} alt=""/>
+            <Link key={oneMovie.imdbID} to={"/movie-details/"+oneMovie.imdbID}> <img variant="top" src={oneMovie.Poster}  style={{height:"180px",width:"230px" ,marginLeft:"0.2em"}} alt=""/></Link> 
             )
            
         })}
