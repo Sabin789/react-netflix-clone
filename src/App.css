@@ -227,3 +227,9 @@ p{
 .white{
   color: white;
 }
+.link{
+ color: rgb(140, 140, 140);
+}
+.link:hover{
+  color: rgb(210,210,210)
+}

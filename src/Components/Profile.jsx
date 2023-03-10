@@ -1,7 +1,10 @@
 
 import avatar from "../assets/avatar.png"
+import MyNav from "./MyNav";
 const Profile = () => {
     return (
+      <>
+      <MyNav placeholder={"Search"}/>
         <div className="body">
   
     <h1 id="heading" className="white">Edit Profile</h1>
@@ -46,6 +49,7 @@ const Profile = () => {
     <button className="others">Delete Profile</button>
   </div>
        </div>
+       </>
      );
 }
  

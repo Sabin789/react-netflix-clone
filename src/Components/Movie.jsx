@@ -13,7 +13,7 @@ class Movie extends Component{
 
   renderMovies= async()=>{
     try{
-        let url="http://www.omdbapi.com/?i=tt3896198&apikey=e8194ce3&s="
+        let url="http://www.omdbapi.com/?tt3896198&apikey=e8194ce3&s="
 
   let res= await fetch(url+this.props.name,{method:"GET"})
     if(res.ok){
@@ -36,9 +36,28 @@ class Movie extends Component{
         console.log(this.state.isError)
     }
   }
+   url=process.env.REACT_APP_BE_URL+"/media"
+  renderLocal=async(n)=>{
+
+  try{
+
+
+
+    let res=await fetch(n)
+    console.log(res)
+  //   if (res.ok){
+  //  console.log("hi")
+  //     const data=await res.json()
+
+  //       console.log(data)
+  //   }
+  }catch(err){
+
+  }
+  }
 componentDidMount(){
     this.renderMovies()
-
+    this.renderLocal(this.url)
 }
 
 
@@ -62,7 +81,7 @@ componentDidMount(){
               <Carousel>
               <Carousel.Item style={{marginLeft:"2em"}}>
         {this.state.AllMovies.slice(0-6).map((oneMovie)=>{
-            console.log(oneMovie)
+
           
           return(
      
@@ -77,7 +96,7 @@ componentDidMount(){
  </Carousel.Item>
  <Carousel.Item style={{marginLeft:"2em"}}>
         {this.state.AllMovies.slice(6).map((oneMovie)=>{
-            console.log(oneMovie)
+   
           
           return(
             
